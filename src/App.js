@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Layout } from 'antd';
+
+import DLHeader from './layout/DLHeader';
+
 import './App.css';
+
+const { Header, Footer, Sider, Content } = Layout;
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%', backgroundColor: '#fff' }} >
+          <DLHeader></DLHeader>
+        </Header>
+        <Layout>
+          <Content>Content</Content>
+          <Sider>Sider</Sider>
+        </Layout>
+        <Footer>Footer</Footer>
+      </Layout>
     </div>
   );
 }
